@@ -1,10 +1,9 @@
-import React from "react"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import Detail from "./components/Detail"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Login from "./components/Login"
 import Header from "./components/Header"
-import Home from "./components/Home"
 import "./App.css"
+import Home from "./components/Home"
+import Detail from "./components/Detail"
 
 function App() {
   return (
@@ -12,24 +11,14 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          {/* Home */}
-          <Route path='/' exact>
-            <Home />
-          </Route>
-
-          {/* Login */}
-          <Route exact path='/login'>
+          <Route exact path='/'>
             <Login />
           </Route>
-
-          {/* Detail */}
+          <Route path='/home'>
+            <Home />
+          </Route>
           <Route path='/detail/:id'>
             <Detail />
-          </Route>
-
-          {/* Home */}
-          <Route path='/'>
-            <Home />
           </Route>
         </Switch>
       </Router>
